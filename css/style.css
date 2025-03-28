@@ -365,7 +365,7 @@
 
 .designation {
     font-size: 14px;
-    color: #007bff;
+    color: #e01373;
 }
 
 .profile-card {
@@ -376,6 +376,7 @@
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     gap: 10px;
+    height: 100px;
     transition: all 0.3s ease;
 }
 
