@@ -209,6 +209,22 @@
 #searchModal .modal-content {
     background: rgba(250, 250, 250, .6);
 }
+.gallery-card {
+    overflow: hidden;
+    border-radius: 10px; /* Rounded corners for a softer look */
+}
+
+.gallery-card img {
+    transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+
 /*** Navbar End ***/
 /* <!-- social media icon -->
  */
