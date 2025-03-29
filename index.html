@@ -45,6 +45,10 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    
+                           <!-- SweetAlert2 Library -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -633,33 +637,30 @@
                         <div class="appointment-form p-5">
                             <p class="fs-4 text-uppercase text-primary">Get In Touch</p>
                             <h1 class="display-4 mb-4 text-white">Get Appointment</h1>
-                            <form class="quick_web_contact_form">
+                            <!-- Form -->
+                            <form class="quick_web_contact_form" onsubmit="return validateForm(event)">
                                 <div class="row gy-3 gx-4">
                                     <div class="col-lg-6">
-                                        <input type="text" class="form-control py-3 border-white bg-transparent text-white" placeholder="First Name">
+                                        <input type="text" id="firstName" class="form-control py-3 border-white bg-transparent text-white" placeholder="First Name" required>
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="email" class="form-control py-3 border-white bg-transparent text-white" placeholder="Email">
+                                        <input type="email" id="email" class="form-control py-3 border-white bg-transparent text-white" placeholder="Email" required>
                                     </div>
                                     <div class="col-lg-6">
-                                        <select class="form-select py-3 border-white bg-transparent" aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                        <input type="number" id="mobile" class="form-control py-3 border-white bg-transparent text-white" placeholder="Mobile" required>
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="date" class="form-control py-3 border-white bg-transparent">
+                                        <input type="date" id="date" class="form-control py-3 border-white bg-transparent" required>
                                     </div>
                                     <div class="col-lg-12">
-                                        <textarea class="form-control border-white bg-transparent text-white" name="text" id="area-text" cols="30" rows="5" placeholder="Write Comments"></textarea>
+                                        <textarea class="form-control border-white bg-transparent text-white" id="comments" cols="30" rows="5" placeholder="Write Comments" required></textarea>
                                     </div>
                                     <div class="col-lg-12">
-                                        <button type="button" class="btn btn-primary btn-primary-outline-0 w-100 py-3 px-5">SUBMIT NOW</button>
+                                        <button type="submit" class="btn btn-primary w-100 py-3 px-5">SUBMIT NOW</button>
                                     </div>
                                 </div>
                             </form>
+
                         </div>
                     </div>
                    
@@ -788,6 +789,48 @@
 
         
     <!-- JavaScript Libraries -->
+     
+<!-- JavaScript Validation -->
+<script>
+    function validateForm(event) {
+        event.preventDefault(); // Prevents default form submission
+
+        // Get form values
+        let firstName = document.getElementById("firstName").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let mobile = document.getElementById("mobile").value.trim();
+        let date = document.getElementById("date").value.trim();
+        let comments = document.getElementById("comments").value.trim();
+
+        // Check if any field is empty
+        if (!firstName || !email || !mobile || !date || !comments) {
+            Swal.fire({
+                title: "⚠️ Oops!",
+                text: "Please fill out all required fields.",
+                icon: "warning",
+                confirmButtonText: "OK",
+                background: "#ffe6f2",  // Light pink background
+                color: "#d63384",  // Dark pink text
+                confirmButtonColor: "#ff69b4" // Pink button
+            });
+            return false; // Stops submission
+        }
+
+        // If all fields are filled, show success alert
+        Swal.fire({
+            title: "🎉 Thank You!",
+            text: "Your form has been submitted successfully.",
+            icon: "success",
+            confirmButtonText: "OK",
+            background: "#ffe6f2",
+            color: "#d63384",
+            confirmButtonColor: "#ff69b4"
+        });
+
+        return true; // Allow submission (if needed, you can submit via AJAX)
+    }
+</script>
+
 
     <script src="https://a2zithub.org/a2pro/assets/js/quickWeb.js"></script>
 
