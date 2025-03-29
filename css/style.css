@@ -204,7 +204,48 @@
     background: rgba(250, 250, 250, .6);
 }
 /*** Navbar End ***/
+/* <!-- social media icon -->
+ */
+ .social-icons {
+    position: fixed;
+    left: 20px; /* Move icons to the left side */
+    top: 80%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for exact centering */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999; /* High z-index to keep it above other elements */
+}
 
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp {
+    background-color: #25D366; /* WhatsApp green */
+}
+
+.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.social-icons a:hover {
+    transform: scale(1.1) translateX(5px); /* Move right slightly on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+ /* <!-- social media icon -->
+ */
 /*** Carousel Start ***/
 .carousel-item {
     position: relative;
