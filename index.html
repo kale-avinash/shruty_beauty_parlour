@@ -73,6 +73,8 @@
 <!-- social media icon  end-->
 
         <!-- Navbar start -->
+    
+        
         <div class="container-fluid sticky-top px-0">
             <div class="container-fluid bg-light">
                 <div class="container px-0">
@@ -829,6 +831,22 @@
 
         return true; // Allow submission (if needed, you can submit via AJAX)
     }
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // सर्व nav-item निवडा
+        let navLinks = document.querySelectorAll(".nav-item.nav-link");
+
+        // प्रत्येक link वर क्लिक इव्हेंट लावा
+        navLinks.forEach(function (link) {
+            link.addEventListener("click", function () {
+                // आधीच्या active class काढा
+                navLinks.forEach(nav => nav.classList.remove("active"));
+                // क्लिक केलेल्या लिंकला active class द्या
+                this.classList.add("active");
+            });
+        });
+    });
 </script>
 
 

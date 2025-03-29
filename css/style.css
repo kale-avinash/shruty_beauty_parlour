@@ -134,6 +134,12 @@
 
 /*** Navbar Start ***/
 
+.nav-item.nav-link.active {
+    font-weight: bold;
+    color:  #e01373 !important; /* Active link रंग */
+    border-bottom: 2px solid  #e01373;
+}
+
 
 
 @media (min-width: 1200px) {
